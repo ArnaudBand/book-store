@@ -1,4 +1,5 @@
 import React from 'react';
+import Book from './Book';
 
 const Books = () => {
   const booksArray = [
@@ -27,9 +28,7 @@ const Books = () => {
         <h2>Books</h2>
         {booksArray.map((book) => (
           <div key={book.id}>
-            <span>{book.topic}</span>
-            <span>{book.title}</span>
-            <span>{book.author}</span>
+            <Book topic={book.topic} title={book.title} author={book.author} />
           </div>
         ))}
       </div>
