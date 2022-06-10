@@ -26,16 +26,16 @@ const Books = () => {
 
   const handleSubmit = () => {};
 
-    return (
-      <div>
-        {booksArray.map((book) => (
-          <div key={book.id}>
-            <Book topic={book.topic} title={book.title} author={book.author} />
-          </div>
-        ))}
-        <AddBook onsubmit={handleSubmit} />
-      </div>
-    );
-}
+  return (
+    <div>
+      {booksArray.map((book) => (
+        <div key={book.id}>
+          <Book topic={book.topic} title={book.title} author={book.author} />
+        </div>
+      ))}
+      <AddBook onsubmit={handleSubmit} />
+    </div>
+  );
+};
 
 export default Books;
