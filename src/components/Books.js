@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from './Book';
+import AddBook from './AddBook';
 
 const Books = () => {
   const booksArray = [
@@ -21,7 +22,9 @@ const Books = () => {
       title: 'Capital in the Twenty-First Century',
       author: 'Suzanne Collins',
     },
-  ]
+  ];
+
+  const handleSubmit = () => {};
 
     return (
       <div>
@@ -31,6 +34,7 @@ const Books = () => {
             <Book topic={book.topic} title={book.title} author={book.author} />
           </div>
         ))}
+        <AddBook onsubmit={handleSubmit} />
       </div>
     );
 }
