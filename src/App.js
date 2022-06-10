@@ -9,7 +9,7 @@ function App() {
     <>
       <header className="top_header flex">
         <div className="left_side flex">
-          <h1 className="logo">BookStore</h1>
+          <h1 className="logo">Bookstore CMS</h1>
           <Link className="menu_bar" to="/">Books</Link>
           <Link className="menu_bar" to="/Categories">Categories</Link>
         </div>
