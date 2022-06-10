@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 const AddBook = ({ handleSubmit }) => {
    return (
-    <>
+    <div className="container_form">
       <h3>ADD NEW BOOK</h3>
-      <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Add Title" />
-          <input type="text" placeholder="Add Author" />
-          <select name="category">
+      <form className="flex" onSubmit={handleSubmit}>
+          <input className="form_space" type="text" placeholder="Book Title" />
+          <input className="form_space" type="text" placeholder="Add Author" />
+          <select className="form_space" name="category">
             <option value="" defaultValue>Category</option>
             <option value="Adventure">Adventure</option>
             <option value="Science Fiction">Science Fiction</option>
@@ -17,9 +17,9 @@ const AddBook = ({ handleSubmit }) => {
             <option value="Economy">Economy</option>
             <option value="Technology">Technology</option>
           </select>
-          <button type="submit">ADD BOOK</button>
+          <button className="form_space" type="submit">ADD BOOK</button>
       </form>
-     </>
+     </div>
    )
 }
 

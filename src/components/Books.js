@@ -28,7 +28,6 @@ const Books = () => {
 
     return (
       <div>
-        <h2>Books</h2>
         {booksArray.map((book) => (
           <div key={book.id}>
             <Book topic={book.topic} title={book.title} author={book.author} />
