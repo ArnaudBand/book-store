@@ -1,5 +1,25 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const ADDBOOK = 'book-store/books/ADDBOOK';
 const REMOVEBOOK = 'book-store/books/REMOVEBOOK';
+
+const books = [
+  {
+    id: uuidv4(),
+    title: 'The Hunger Game',
+    author: 'Suzanne Collins',
+  },
+  {
+    id: uuidv4(),
+    title: 'Dune',
+    author: 'Frank Herbert',
+  },
+  {
+    id: uuidv4(),
+    title: 'Capital in the Twenty-First Century',
+    author: 'Suzanne Collins',
+  },
+];
 
 export const addBook = (book) => ({
   type: ADDBOOK,
@@ -10,8 +30,6 @@ export const removeBook = (id) => ({
   type: REMOVEBOOK,
   id,
 });
-
-const books = [];
 
 const reducerBook = (state = books, action = {}) => {
   switch (action.type) {
