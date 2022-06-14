@@ -20,8 +20,8 @@ const Book = ({
         <div className="title fonts">{title}</div>
         <div className="author">{author}</div>
         <div className="div_btn">
-          <button type="button" onClick={(e) => handleClick(e, id)}>Comments</button>
-          <button type="button">Remove</button>
+          <button type="button">Comments</button>
+          <button type="button" onClick={(e) => handleClick(e, id)}>Remove</button>
           <button type="button">Edit</button>
         </div>
       </div>
