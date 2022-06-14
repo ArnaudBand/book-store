@@ -1,16 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/book/book';
 
-const Book = (props) => {
-  const { topic, title, author } = props;
+const Book = ({
+  id, category, title, author,
+}) => {
+  const dispatch = useDispatch();
+
+  const handleClick = (e, bookId) => {
+    e.preventDefault();
+    dispatch(removeBook(bookId));
+  };
+
   return (
     <div className="container flex">
-      <div className="card">
-        <div className="topics">{topic}</div>
+      <div key={id} className="card">
+        <div className="topics">{category}</div>
         <div className="title fonts">{title}</div>
         <div className="author">{author}</div>
         <div className="div_btn">
-          <button type="button">Comments</button>
+          <button type="button" onClick={(e) => handleClick(e, id)}>Comments</button>
           <button type="button">Remove</button>
           <button type="button">Edit</button>
         </div>
@@ -21,7 +31,8 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
-  topic: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
