@@ -1,5 +1,7 @@
-const ADDBOOK = 'book-store/books/ADDBOOK';
-const REMOVEBOOK = 'book-store/books/REMOVEBOOK';
+const ADDBOOK = 'book-store/book/ADDBOOK';
+const REMOVEBOOK = 'book-store/book/REMOVEBOOK';
+
+const books = [];
 
 export const addBook = (book) => ({
   type: ADDBOOK,
@@ -10,8 +12,6 @@ export const removeBook = (id) => ({
   type: REMOVEBOOK,
   id,
 });
-
-const books = [];
 
 const reducerBook = (state = books, action = {}) => {
   switch (action.type) {

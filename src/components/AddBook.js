@@ -1,29 +1,64 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/book/book';
 
-// eslint-disable-next-line react/prop-types
-const AddBook = ({ handleSubmit }) => (
-  <div className="container_form">
-    <h3>ADD NEW BOOK</h3>
-    <form className="flex" onSubmit={handleSubmit}>
-      <input className="form_space" type="text" placeholder="Book Title" />
-      <input className="form_space" type="text" placeholder="Add Author" />
-      <select className="form_space" name="category">
-        <option value="" defaultValue>Category</option>
-        <option value="Adventure">Adventure</option>
-        <option value="Science Fiction">Science Fiction</option>
-        <option value="Terror">Terror</option>
-        <option value="Romance">Romance</option>
-        <option value="Economy">Economy</option>
-        <option value="Technology">Technology</option>
-      </select>
-      <button className="form_space" type="submit">ADD BOOK</button>
-    </form>
-  </div>
-);
+const AddBooks = () => {
+  const dispatch = useDispatch();
+  const emptyBook = { title: '', author: '', category: '' };
+  const [state, changeState] = useState(emptyBook);
 
-AddBook.protoTypes = {
-  handleSubmit: PropTypes.func.isRequired,
+  const handleTitle = (e) => {
+    changeState({
+      ...state,
+      title: e.target.value,
+    });
+  };
+
+  const handleAuthor = (e) => {
+    changeState({
+      ...state,
+      author: e.target.value,
+    });
+  };
+
+  const handleCategory = (e) => {
+    changeState({
+      ...state,
+      category: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { title, author, category } = state;
+    dispatch(addBook({
+      id: uuidv4(),
+      title,
+      author,
+      category,
+    },
+    changeState(emptyBook)));
+  };
+
+  return (
+    <div className="container_form">
+      <h3>ADD NEW BOOK</h3>
+      <form className="flex form" onSubmit={handleSubmit}>
+        <input className="form_space" type="text" value={state.title} placeholder="Book Title" onChange={handleTitle} required />
+        <input className="form_space" type="text" value={state.author} placeholder="Add Author" onChange={handleAuthor} required />
+        <select className="form_space" name="category" value={state.category} onChange={handleCategory}>
+          <option value="" defaultValue>Category</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Terror">Terror</option>
+          <option value="Romance">Romance</option>
+          <option value="Economy">Economy</option>
+          <option value="Technology">Technology</option>
+        </select>
+        <button className="form_space" type="submit">ADD BOOK</button>
+      </form>
+    </div>
+  );
 };
 
-export default AddBook;
+export default AddBooks;

@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from 'react-redux';
+import { legacy_createStore as createStore, combineReducers } from 'redux';
 
 import reducerBook from './book/book';
 import reducerCategories from './categories/categories';
@@ -8,6 +8,6 @@ const reducer = combineReducers({
   categories: reducerCategories,
 });
 
-const store = configureStore(reducer);
+const store = createStore(reducer);
 
 export default store;
