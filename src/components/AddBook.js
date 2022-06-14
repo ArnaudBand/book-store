@@ -49,7 +49,6 @@ const AddBooks = () => {
         <input className="form_space" type="text" value={state.author} placeholder="Add Author" onChange={handleAuthor} required />
         <select className="form_space" name="category" value={state.category} onChange={handleCategory}>
           <option value="" defaultValue>Category</option>
-          <option value="Adventure">Adventure</option>
           <option value="Science Fiction">Science Fiction</option>
           <option value="Terror">Terror</option>
           <option value="Romance">Romance</option>
