@@ -5,41 +5,49 @@ import { addBook } from '../redux/book/book';
 
 const AddBooks = () => {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('');
+  const emptyBook = { title: '', author: '', category: '' };
+  const [state, changeState] = useState(emptyBook);
 
   const handleTitle = (e) => {
-    setTitle(e.target.value);
+    changeState({
+      ...state,
+      title: e.target.value,
+    });
   };
 
   const handleAuthor = (e) => {
-    setAuthor(e.target.value);
+    changeState({
+      ...state,
+      author: e.target.value,
+    });
   };
 
   const handleCategory = (e) => {
-    setCategory(e.target.value);
+    changeState({
+      ...state,
+      category: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { title, author, category } = state;
     dispatch(addBook({
       id: uuidv4(),
       title,
       author,
       category,
     },
-    setTitle(''),
-    setAuthor('')));
+    changeState(emptyBook)));
   };
 
   return (
     <div className="container_form">
       <h3>ADD NEW BOOK</h3>
       <form className="flex form" onSubmit={handleSubmit}>
-        <input className="form_space" type="text" placeholder="Book Title" onChange={handleTitle} required />
-        <input className="form_space" type="text" placeholder="Add Author" onChange={handleAuthor} required />
-        <select className="form_space" name="category" onChange={handleCategory}>
+        <input className="form_space" type="text" value={state.title} placeholder="Book Title" onChange={handleTitle} required />
+        <input className="form_space" type="text" value={state.author} placeholder="Add Author" onChange={handleAuthor} required />
+        <select className="form_space" name="category" value={state.category} onChange={handleCategory}>
           <option value="" defaultValue>Category</option>
           <option value="Adventure">Adventure</option>
           <option value="Science Fiction">Science Fiction</option>
