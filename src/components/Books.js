@@ -5,7 +5,6 @@ import AddBooks from './AddBook';
 
 const Books = () => {
   const booksArray = useSelector((state) => state.books);
-
   const handleSubmit = () => {};
 
   return (
