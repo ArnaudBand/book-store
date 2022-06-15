@@ -20,7 +20,7 @@ export const addData = async (book) => {
       item_id: book.id,
       title: book.title,
       author: book.author,
-      catogry: book.catogry,
+      category: book.category,
     }),
   }).catch((err) => err.message);
 };
