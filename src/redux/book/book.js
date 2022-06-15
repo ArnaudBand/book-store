@@ -1,5 +1,10 @@
+import { getData } from '../../data/api';
+
+console.log(getData());
+
 const ADDBOOK = 'book-store/book/ADDBOOK';
 const REMOVEBOOK = 'book-store/book/REMOVEBOOK';
+// const GETBOOK = 'book-store/book/GETBOOK';
 
 const books = [];
 
