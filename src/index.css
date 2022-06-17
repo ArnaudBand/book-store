@@ -53,6 +53,10 @@ body {
   border: 0.3px solid rgb(186, 186, 186);
 }
 
+.right_side svg {
+  color: #0290ff;
+}
+
 .container {
   justify-content: space-between;
   border: 0.3px solid rgb(186, 186, 186);
@@ -134,7 +138,6 @@ form {
 }
 
 .form_space {
-  margin: 0 0 2rem 0;
   padding: 1rem 3.9rem;
   opacity: 0.7;
 }
