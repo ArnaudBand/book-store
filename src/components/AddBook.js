@@ -55,7 +55,7 @@ const AddBooks = () => {
           <option value="Economy">Economy</option>
           <option value="Technology">Technology</option>
         </select>
-        <button className="form_space" type="submit">ADD BOOK</button>
+        <button className="form_space btn-add" type="submit">ADD BOOK</button>
       </form>
     </div>
   );

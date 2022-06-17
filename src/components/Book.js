@@ -15,6 +15,7 @@ const Book = ({
   };
 
   const randomChapter = words[Math.floor(Math.random() * words.length)];
+  const percent = Math.floor(Math.random() * 59);
   return (
     <div className="container flex">
       <div key={id} className="card">
@@ -32,11 +33,17 @@ const Book = ({
           animationSmooth="1s ease-out"
           colorCircle="#f1f1f1"
           colorSlice="#FF6D00"
-          percent={Math.floor(Math.random() * 100) + 5}
+          percent={percent}
           linearGradient={['#379cf6', '#307bbe']}
           size={110}
         />
-        <p style={{ textAlign: 'center', fontSize: 20 }}>Complete</p>
+        <div className="direction">
+          <p className="percentage">
+            {percent}
+            %
+          </p>
+          <p style={{ textAlign: 'center', fontSize: 20 }}>Complete</p>
+        </div>
       </div>
       <div className="chapter">
         <h4>CURRENT CHAPTER</h4>
