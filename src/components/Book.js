@@ -8,12 +8,13 @@ const Book = ({
   id, category, title, author,
 }) => {
   const dispatch = useDispatch();
-
+  const words = ['Introduction', 'The Boy Who Lived', 'The Vanishing Glass', 'The Keeper of the Keys', 'Out of Her Favor', 'Dreamers Often Lie', 'The Mask of Night', 'Biology', 'Chemistry', 'Health'];
   const handleClick = (e, bookId) => {
     e.preventDefault();
     dispatch(removeBook(bookId));
   };
 
+  const randomChapter = words[Math.floor(Math.random() * words.length)];
   return (
     <div className="container flex">
       <div key={id} className="card">
@@ -26,7 +27,7 @@ const Book = ({
           <button type="button">Edit</button>
         </div>
       </div>
-      <div className="circle">
+      <div className="circle flex">
         <CircularProgressBar
           animationSmooth="1s ease-out"
           colorCircle="#f1f1f1"
@@ -40,9 +41,12 @@ const Book = ({
       <div className="chapter">
         <h4>CURRENT CHAPTER</h4>
         <p>
-          Chapter:
+          Chapter
           {' '}
           {Math.floor(Math.random() * 24) + 1}
+          {' '}
+          :
+          {randomChapter}
         </p>
         <button className="progress_btn" type="button">UPDATE PROGRESS</button>
       </div>
