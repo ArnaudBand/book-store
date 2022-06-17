@@ -19,11 +19,7 @@ const Categories = () => {
   return (
     <>
       <div style={styling}>
-        <button type="button" onClick={handleClick}>Check updates</button>
-        <br />
-        <br />
-        <br />
-
+        <button className="checkBtn" type="button" onClick={handleClick}>Check updates</button>
       </div>
       <h1 style={{ textAlign: 'center' }}>{categories}</h1>
     </>

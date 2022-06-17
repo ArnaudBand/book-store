@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Charis+SIL&family=Roboto:wght@400;500&display=swap');
 
 * {
@@ -30,8 +31,8 @@ body {
 
 .logo {
   margin: 0 1rem;
-  font-weight: bold;
-  color: rgb(19, 87, 182);
+  font-family: 'Roboto', sans-serif;
+  color: #0290ff;
 }
 
 .menu_bar {
@@ -51,6 +52,10 @@ body {
   padding: 1rem;
   border-radius: 50%;
   border: 0.3px solid rgb(186, 186, 186);
+}
+
+.right_side svg {
+  color: #0290ff;
 }
 
 .container {
@@ -104,12 +109,12 @@ body {
 }
 
 .progress_btn {
-  margin: 1.5rem;
+  margin: 1.5rem 0 0 0;
   padding: 0.5rem 1.5rem;
-  border-radius: 0.5rem;
   background-color: #0290ff;
-  color: #fff;
   border: none;
+  border-radius: 0.2rem;
+  color: #fff;
 }
 
 .container_form {
@@ -118,6 +123,7 @@ body {
 
 h3 {
   font-weight: bolder;
+  color: gray;
   font-family: 'Roboto', sans-serif;
   margin: 0 0 1rem 0;
 }
@@ -128,7 +134,48 @@ form {
   flex-wrap: wrap;
 }
 
+.form input {
+  border: 1px solid gray;
+}
+
 .form_space {
-  margin: 0 0 2rem 0;
   padding: 1rem 3.9rem;
+  opacity: 0.7;
+}
+
+.checkBtn {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  background-color: #0290ff;
+  border: none;
+  border-radius: 2rem;
+  margin: 18rem 0 0 0;
+}
+
+.btn-add {
+  background-color: #0290ff;
+  border: none;
+  border-radius: 0.3rem;
+  color: #fff;
+}
+
+.circle {
+  justify-content: left;
+  border-right: 1px solid rgb(179, 179, 179);
+  padding: 0 7rem 0 0;
+}
+
+.direction {
+  padding: 0 0 0 1rem;
+}
+
+.percentage {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.chapter {
+  width: 15rem;
+  flex-direction: column;
+  margin: 1rem 2rem 1rem 0;
 }
